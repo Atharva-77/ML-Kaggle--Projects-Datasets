@@ -143,3 +143,10 @@ ypred1 = ypred1.astype(int)
 
 from sklearn.metrics import accuracy_score 
 accuracy_score(y_test,ypred1) 
+
+PassengerId=dftest['PassengerId']
+PassengerId
+submission=pd.DataFrame({'PassengerId':PassengerId})
+submission['Survived']=ypred2
+submission.to_csv('TITanic2.csv',index=False)
+#Accuracy is 0.7703
